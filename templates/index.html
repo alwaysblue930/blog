@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">Blog</a>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/create_get">Create</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    
+    <section class="hero">
+      <div>
+        <h2>Simple Posting Website</h2>
+        <h3>Created by Python Django</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam laudantium voluptatum, ducimus architecto iusto quos.</p>
+      </div>
+      <div>
+        <img src="{% static 'profile.png' %}" alt=""></div>
+    </section>
+    
+    {% for post in posts %}
+    <div class="posts {% cycle 'even' 'odd' %}">
+      <a href="post/{{post.id}}">
+        <h2>{{post.title}}</h2>
+        <h5>{{post.create_at}}</h5>
+        <p>{{post.body|truncatewords:20}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </body>
+</html>
