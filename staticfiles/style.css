@@ -34,7 +34,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 9%;
+  padding: 1.875rem 9%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +42,7 @@ a {
   z-index: 10;
 }
 .logo {
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 700;
 }
 .hero {
@@ -62,38 +62,38 @@ section {
 }
 
 .hero h2{
-  font-size: 60px;
+  font-size: 3.75rem;
 }
 
 .hero h3 {
-  font-size: 35px;
+  font-size: 2.2rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .hero p {
-  font-size: 16px;
-  line-height: 40px;
+  font-size: 1rem;
+  line-height: 2.5rem;
 }
 
 .navbar {
   display: flex;
 }
 .navbar a{
-  margin-right: 60px;
-  font-size: 20px;
+  margin-right: 3.7rem;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 
 .posts {
-  padding: 15px 19%;
+  padding: 1rem 19%;
 }
 .posts h2{
-  font-size: 48px;
+  font-size: 3rem;
 }
 .posts h5{
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 .posts p{
   font-size: 1.2rem;
@@ -109,6 +109,7 @@ section {
 .single-post {
   background-color: var(--main-color);
   padding-bottom: 4rem;
+  min-width: 100vh;
 }
 
 .create {
@@ -162,4 +163,90 @@ section {
 
 .btn-container {
   display: flex;
+}
+.posts-container {
+  width: 100%;
+  min-width: 100vh;
+}
+
+.contact {
+  background-color: var(--main-color);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  min-width: 100vh;
+  align-items: center;
+  column-gap: 5rem;
+}
+
+.info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 3rem;
+}
+
+.contact-info h4{
+  font-size: 2rem;
+  font-weight: 600; 
+  margin-bottom: 1rem;
+}
+
+.contact-info__text{
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.contact-info .icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+.content--header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.form__container {
+  background-color: var(--second-color);
+}
+
+.contact__form {
+  width: 100%;
+  background-color: white;
+  padding: 4rem;
+}
+
+.contact__form h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.contact__form h4 {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.input__text {
+  border-bottom: 1px solid black;
+  width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact form .btn{
+  display: block;
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
 }

@@ -11,7 +11,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/create_get">Create</a></li>
         <li><a href="/posts">Posts</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </header>
     
@@ -22,17 +22,19 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam laudantium voluptatum, ducimus architecto iusto quos.</p>
       </div>
       <div>
-        <img src="{% static 'profile.png' %}" alt=""></div>
+      <img src="{% static 'profile.png' %}" alt=""></div>
     </section>
     
-    {% for post in posts %}
-    <div class="posts {% cycle 'even' 'odd' %}">
-      <a href="post/{{post.id}}">
-        <h2>{{post.title}}</h2>
-        <h5>{{post.create_at}}</h5>
-        <p>{{post.body|truncatewords:20}}</p>
-      </a>
+    <div class="posts-container">
+      {% for post in posts %}
+      <div class="posts {% cycle 'even' 'odd' %}">
+        <a href="post/{{post.id}}">
+          <h2>{{post.title}}</h2>
+          <h5>{{post.create_at}}</h5>
+          <p>{{post.body|truncatewords:20}}</p>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </body>
 </html>

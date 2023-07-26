@@ -48,3 +48,6 @@ def update(request, pk):
             print(form.errors)
     else:
         return render(request, 'update.html', {'post': post}) 
+    
+def contact(request):
+    return render(request, 'contact.html')
