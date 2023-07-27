@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    {% block extra_css1 %}{% endblock %}
+    {% block extra_css2 %}{% endblock %}
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/" class="logo">Blog</a>
+      <ul class="header__ul">
+        <li><a href="/">Home</a></li>
+        <li><a href="/create">Create</a></li>
+        <li><a href="/listall">Posts</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </header>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

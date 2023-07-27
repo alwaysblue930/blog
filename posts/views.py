@@ -3,39 +3,35 @@ from .models import Post
 from .forms import PostForm
 
 # Create your views here.
-def index(request):
+def home(request):
     posts = Post.objects.all()
-    return render(request, 'index.html', {'posts': posts})
+    return render(request, 'home.html', {'posts': posts})
 
-def post(request, pk):
+def read(request, pk):
     post = Post.objects.get(id=pk)
-    return render(request, 'post.html', {'post': post})
+    return render(request, 'read.html', {'post': post})
 
-def posts(request):
+def listall(request):
     posts = Post.objects.all()
-    return render(request, 'posts.html', {'posts': posts})
+    return render(request, 'listall.html', {'posts': posts})
 
-def create_get(request):
-    return render(request, 'create.html')
-
-def create_post(request):
+def create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('index')
+           form.save()
+           return redirect('home')
         else:
             print(form.errors)
-    else:
-        form = PostForm()
-        
-    return render(request, 'create.html', {'form': form})
+             
+    return render(request, 'create.html')
+
 def delete(request, pk):
     if request.method == 'POST':
         post = get_object_or_404(Post, id=pk)
         post.delete()
 
-    return redirect('index')
+    return redirect('home')
     
 def update(request, pk):
     post = get_object_or_404(Post, id=pk)
@@ -43,7 +39,7 @@ def update(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('home')
         else:
             print(form.errors)
     else:

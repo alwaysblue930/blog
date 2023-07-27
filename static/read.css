@@ -1,0 +1,32 @@
+.read {
+  background-color: var(--main-color);
+}
+
+.read h2 {
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+
+.read h5{
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+}
+.read p{
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.read__buttons {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.read__buttons a,
+.read__buttons button {
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: var(--second-color);
+  cursor: pointer;
+}

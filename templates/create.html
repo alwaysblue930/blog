@@ -1,37 +1,22 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <a href="/" class="logo">Logo</a>
-        <ul class="navbar">
-          <li><a href="/">Home</a></li>
-          <li><a href="/create_get">Create</a></li>
-          <li><a href="/posts">Posts</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </header>
-
-      <section class="create">
-        <h2 class="heading">Create Post</h2>
-        <form action="create_post" method="POST">
-          {% csrf_token %}
-          <div class="input-box">
-            <p>Title</p>
-            <input type="text" name="title" class="title" placeholder="Enter Title">
-          </div>
-          <div class="input-box">
-            <p>Main Content</p>
-            <textarea name="body" id="" cols="30" rows="10" placeholder="Enter content"></textarea>
-          </div>
-          <input type="submit" value="Create Post" class="btn">
-        </form>
-      </section>
-    </div>
-  </body>
-</html>
+{% block extra_css1 %}
+<link rel="stylesheet" href="{% static 'create.css' %}">
+{% endblock %}
+{% block content %}
+  <main class="create">
+    <h2 class="create__heading">Create Post</h2>
+    <form class="create__form" action="{% url 'create' %}" method="POST">
+      {% csrf_token %}
+      <div class="create__form__input">
+        <p>Title</p>
+        <input type="text" name="title" class="title" placeholder="Enter Title">
+      </div>
+      <div class="create__form__input">
+        <p>Main Content</p>
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Enter content"></textarea>
+      </div>
+      <button type="submit">Create Post</button>
+    </form>
+  </main>
+{% endblock %}

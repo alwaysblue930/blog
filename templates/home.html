@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css1 %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+{% block content %}
+  <main class="home">
+    <div>
+      <h2>Simple Posting Website</h2>
+      <h3>Created by Python Django</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam laudantium voluptatum, ducimus architecto iusto quos.</p>
+    </div>
+    <div>
+    <img src="{% static 'profile.png' %}" alt=""></div>
+  </main>
+    {% for post in posts %}
+    <div class="post {% cycle 'post--even' 'post--odd' %}">
+      <a href="read/{{post.id}}">
+        <h2>{{post.title}}</h2>
+        <h5>{{post.create_at}}</h5>
+        <p>{{post.body|truncatewords:20}}</p>
+      </a>
+    </div>
+    {% endfor %}
+{% endblock%}

@@ -1,0 +1,54 @@
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  align-items: center;
+  background-color: var(--main-color);
+}
+
+.home h2{
+  font-size: 3.75rem;
+}
+
+.home h3{
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.home p {
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
+
+.post {
+  padding: 1rem 19%;
+  width: 100%;
+  min-width: 100vh;
+}
+.post h2{
+  font-size: 3rem;
+}
+.post h5{
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+}
+.post p{
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.post--odd{
+  background-color: var(--main-color);
+}
+
+.post--even{
+  background-color: var(--second-color);
+}
+
+@media (max-width: 768px){
+  .home {
+    display: block;
+  }
+}

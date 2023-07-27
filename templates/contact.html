@@ -1,64 +1,38 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="{% static 'style.css'%}">
-  <title>Contact</title>
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <a href="/" class="logo">Logo</a>
-      <ul class="navbar">
-        <li><a href="/">Home</a></li>
-        <li><a href="/create_get">Create</a></li>
-        <li><a href="/posts">Posts</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </header>
-
-    <section class="contact">
-      <div class="content--header">
+{% block extra_css1 %}
+<link rel="stylesheet" href="{% static 'contact.css' %}">
+{% endblock %}
+{% block content %}
+    <main class="contact">
+      <div class="contact__header">
         <h2>Contact Me</h2>
       </div>
-      <div class="contact__container">
-        <div class="info__container">
-          <div class="contact-info">
-            <h4>Address</h4>
-            <span><i class='bx bx-map icon'></i></span>
-            <p class="contact-info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
+      <div class="contact__grid">
+        <div class="contact__grid__info">
+          <h4>Address</h4>
+          <i class="ri-map-pin-line"></i>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 
-          <div class="contact-info">
-            <h4>Phone</h4>
-            <span><i class='bx bxs-phone icon'></i></span>
-            <p class="contact-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
+          <h4>Phone</h4>
+          <i class="ri-phone-line"></i>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
 
-          <div class="contact-info">
-            <h4>Email</h4>
-            <span><i class='bx bxs-envelope icon'></i></span>
-            <p class="contact-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
+          <h4>Email</h4>
+          <i class="ri-mail-line"></i>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
         </div>
-        <div class="form__container">
-          <form action="" class="contact__form">
+
+        <form action="" class="contact__form">
             <h3>Send Message</h3>
             <h4>Full Name</h4>
-            <input type="text" class="input__text">
+            <input type="text">
             <h4>Email</h4>
-            <input type="text" class="input__text">
+            <input type="text">
             <h4>Type your Message</h4>
-            <input type="text" class="input__text">
-            <input type="submit" value="Send" class="btn">
-          </form>
-        </div>
+            <input type="text">
+            <button type="submit">Send</button>
+        </form>
       </div>
-    </section>
-  </div>
-</body>
-</html>
+    </main>
+{% endblock %}

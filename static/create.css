@@ -1,0 +1,44 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+}
+
+.create__heading {
+  margin: 4rem 0;
+  font-size: 3rem;
+}
+
+.create__form {
+  width: 100%;
+  min-width: 100vh;
+  height: 100%;
+}
+
+.create__form__input {
+  width: 100%;
+  font-size: 2rem;
+}
+
+.create__form__input p {
+  font-size: 2rem;
+  margin: 0 0 1rem 1.5rem;
+}
+
+.create__form__input input,
+.create__form__input textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  resize: none;
+}
+
+.create__form button {
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
